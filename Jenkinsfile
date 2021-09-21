@@ -1,4 +1,4 @@
-def antVersion = 'Ant1.9.1'
+/*def antVersion = 'Ant1.9.1'
 node{
   withEnv( ["ANT_HOME=${tool antVersion}"] ) {
     sh '$ANT_HOME/bin/ant target1 target2'
@@ -12,7 +12,7 @@ node{
 //}
 
 
-/*ipeline {
+pipeline {
   agent { docker { image 'cameronmcnz/ant-jdk8-git:latest' } }
   stages {
     stage('Log the Jenkins Docker Ant Git and Java version info') {
