@@ -1,4 +1,4 @@
-pipeline {
+/*ipeline {
   agent { docker { image 'cameronmcnz/ant-jdk8-git:latest' } }
   stages {
     stage('Log the Jenkins Docker Ant Git and Java version info') {
@@ -17,7 +17,7 @@ pipeline {
   }
 }
 
-/*node{
+node{
     stage ('Build and Test') {
         env.PATH = "${tool 'ant'}/bin:${env.PATH}"
         checkout scm
