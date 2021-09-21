@@ -1,4 +1,22 @@
-pipeline {
+def readpom;
+node{
+    stage('SCM Checkout'){
+        
+        git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
+    }
+    stage('read POM'){
+        readpom = readFile 'build.xml';
+    }
+    stage('Compile-Package'){
+        //Get ant home path
+        def antHome = tool name: 'ant', type: 'ant'
+        sh "cd ${WORKSPACE}/dagilityant2; ${antHome}/bin/ant -init" 
+        sh 'ant -f build.xml'       
+    }
+}
+
+
+/*pipeline {
   agent any
   stages {
     stage('Log Ant version info') {
@@ -15,7 +33,7 @@ pipeline {
     }
   }
 }
-/*node{
+node{
     def antVersion = 'Ant1.9.2'
     withAnt( ["ANT_HOME=${tool antVersion}"] ) {
         sh "cd ${WORKSPACE}/ANTworkspace; $ANT_HOME/bin/ant target1 target2"
