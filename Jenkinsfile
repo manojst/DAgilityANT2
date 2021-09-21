@@ -20,7 +20,7 @@ pipeline{
             steps {
                 script {
                     sh 'ant -init'
-   		            sh 'ant -f build.xml'		    
+                    sh 'ant -f build.xml'		    
                 }
             }
         }
