@@ -4,12 +4,12 @@
 }*/
 pipeline{
     agent {label 'agent' }
-    tools { Ant 'Ant' }
+    tools { ANT 'ANT' }
     stages{
         stage('checkout') {
             steps {
                  script{
-                    dir("Ant")
+                    dir("ANT")
                     {
                         git "https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git"
                     }   
