@@ -1,8 +1,12 @@
-node{
+withAnt(installation: 'myinstall') {
     sh 'ant -init'
     sh 'ant -f build.xml'
 }
-/*pipeline{
+/*node{
+    sh 'ant -init'
+    sh 'ant -f build.xml'
+}
+pipeline{
     agent {label 'agent' }
     tools { ant 'ant' }
     stages{
