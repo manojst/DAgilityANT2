@@ -1,8 +1,9 @@
 node{
-    stage 'Build and Test'
-    env.PATH = "${tool 'ant'}/bin:${env.PATH}"
-    checkout scm
-    sh 'ant build'
+    stage ('Build and Test') {
+        env.PATH = "${tool 'ant'}/bin:${env.PATH}"
+        checkout scm
+        sh 'ant build'
+    }
     //withAnt{
     //    git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
       //  sh 'ant -init'
