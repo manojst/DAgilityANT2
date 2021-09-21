@@ -1,7 +1,11 @@
 node{
-    def antVersion = 'Ant1.9.2'
+    /*def antVersion = 'Ant1.9.2'
     withAnt( ["ANT_HOME=${tool antVersion}"] ) {
         sh "cd ${WORKSPACE}/ANTworkspace; $ANT_HOME/bin/ant target1 target2"
+    }*/
+    withAnt(installation: 'myinstall') {
+        sh 'ant -init'
+        sh 'ant -f build.xml'
     }
 }
 /*withAnt(installation: 'myinstall') {
