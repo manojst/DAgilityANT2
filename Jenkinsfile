@@ -1,3 +1,15 @@
+def antVersion = 'Ant1.9.1'
+withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+    sh '$ANT_HOME/bin/ant target1 target2'
+}
+//withAnt(installation: 'LocalAnt') {
+// some block
+  // sh "ant build"
+//for windows 
+   //bat "ant build"
+//}
+
+
 /*ipeline {
   agent { docker { image 'cameronmcnz/ant-jdk8-git:latest' } }
   stages {
