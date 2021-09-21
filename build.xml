@@ -1,1 +1,11 @@
-﻿
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="java-ant-project" default="run">
+	<target name="run" depends="compile">
+		<java classname="DAgilityTraining.HelloWorld">
+			<classpath path="test"></classpath>
+		</java>
+	</target>
+	<target name="compile">
+		<javac srcdir="src" destdir="test"></javac>
+	</target>	
+</project>
