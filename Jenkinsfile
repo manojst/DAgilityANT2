@@ -1,4 +1,23 @@
-node{
+pipeline {
+  agent { docker { image 'cameronmcnz/ant-jdk8-git:latest' } }
+  stages {
+    stage('Log the Jenkins Docker Ant Git and Java version info') {
+      steps {
+        sh 'ant -version'
+	    sh 'java -version'
+	    sh 'git --version'
+      }
+    }
+    stage('GitHub Jenkins Ant Docker Build') {
+      steps {
+        git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
+        sh 'ant clean compile test package war'
+      }
+    }
+  }
+}
+
+/*node{
     stage ('Build and Test') {
         env.PATH = "${tool 'ant'}/bin:${env.PATH}"
         checkout scm
@@ -13,7 +32,7 @@ node{
  }
 
 
-/*def readpom;
+def readpom;
 node{
     stage('SCM Checkout'){
         
