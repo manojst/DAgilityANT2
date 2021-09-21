@@ -1,8 +1,8 @@
-/*node{
+node{
     sh 'ant -init'
     sh 'ant -f build.xml'
-}*/
-pipeline{
+}
+/*pipeline{
     agent {label 'agent' }
     tools { ant 'ant' }
     stages{
@@ -25,5 +25,5 @@ pipeline{
             }
         }
     }    
-}
+}*/
 
