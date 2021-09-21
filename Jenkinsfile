@@ -1,14 +1,14 @@
 node{
-    //stage 'Build and Test'
-    //env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
-    //checkout scm
-    //sh 'ant build'
-    withAnt{
-        git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
-        sh 'ant -init'
-        sh 'ant -f build.xml'
+    stage 'Build and Test'
+    env.PATH = "${tool 'ant'}/bin:${env.PATH}"
+    checkout scm
+    sh 'ant build'
+    //withAnt{
+    //    git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
+      //  sh 'ant -init'
+        //sh 'ant -f build.xml'
         //sh "cd ${WORKSPACE}/ANTworkspace; $ANT_HOME/bin/ant target1 target2"
-    }
+    //}
  }
 
 
