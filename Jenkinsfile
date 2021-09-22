@@ -1,10 +1,12 @@
 node {
   stage('Test') {
-    env.JAVA_HOME="${tool 'jdk_8u181'}"
+    //env.JAVA_HOME="${tool 'jdk_8u181'}"
     env.ANT_HOME="${tool 'ant_1_10_5'}"
-    env.PATH = "${env.JAVA_HOME}/bin:${env.ANT_HOME}/bin:${env.PATH}"
-    sh "java -version"
-    withAnt(installation: 'ant_1_10_5', jdk: 'jdk_8u181') {
+    //env.PATH = "${env.JAVA_HOME}/bin:${env.ANT_HOME}/bin:${env.PATH}"
+    env.PATH = "${env.ANT_HOME}/bin:${env.PATH}"
+    //sh "java -version"
+    //withAnt(installation: 'ant_1_10_5', jdk: 'jdk_8u181') {
+    withAnt(installation: 'ant_1_10_5') {
     //  echo "Test ant"
       sh "ant -d -version"
     }
