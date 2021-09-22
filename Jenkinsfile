@@ -2,7 +2,6 @@ node{
   //env.PATH = "${tool 'ant 1.9.7'}/bin:${env.PATH}"
   stage('GitHub Jenkins Ant Build') {
     git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
-    sh 'yum install ant'
     sh 'ant -version'
     sh 'ant -f build.xml'
   }
