@@ -1,5 +1,5 @@
 node{
-  env.PATH = "${tool 'ant 1.9.7'}/bin:${env.PATH}"
+  //env.PATH = "${tool 'ant 1.9.7'}/bin:${env.PATH}"
   stage('GitHub Jenkins Ant Build') {
     steps {
       git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
