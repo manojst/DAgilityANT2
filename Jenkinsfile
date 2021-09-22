@@ -3,6 +3,8 @@ node{
   stage('GitHub Jenkins Ant Build') {
     steps {
       git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
+      sh 'yum install ant'
+      sh 'ant -version'
       sh 'ant -f build.xml'
     }
   }
