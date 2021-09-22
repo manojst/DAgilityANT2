@@ -1,3 +1,16 @@
+node {
+  stage('Test') {
+    env.JAVA_HOME="${tool 'jdk_8u181'}"
+    env.ANT_HOME="${tool 'ant_1_10_5'}"
+    env.PATH = "${env.JAVA_HOME}/bin:${env.ANT_HOME}/bin:${env.PATH}"
+    sh "java -version"
+    withAnt(installation: 'ant_1_10_5', jdk: 'jdk_8u181') {
+    //  echo "Test ant"
+      sh "ant -d -version"
+    }
+  }
+}
+
 /*node{
   //env.PATH = "${tool 'ant 1.9.7'}/bin:${env.PATH}"
   stage('GitHub Jenkins Ant Build') {
