@@ -1,4 +1,4 @@
-node{
+/*node{
   //env.PATH = "${tool 'ant 1.9.7'}/bin:${env.PATH}"
   stage('GitHub Jenkins Ant Build') {
     git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilityant2.git'
@@ -6,7 +6,7 @@ node{
     sh 'ant -f build.xml'
   }
 }  
-/*def antVersion = 'Ant1.9.1'
+def antVersion = 'Ant1.9.1'
 node{
   withEnv( ["ANT_HOME=${tool antVersion}"] ) {
     sh '$ANT_HOME/bin/ant target1 target2'
